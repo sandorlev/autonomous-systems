@@ -1,0 +1,45 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{a4wide}
+\usepackage{listings}
+\usepackage{mathtools}
+\usepackage[dutch]{babel}
+\begin{document}
+\section*{Authors, date, assignment}
+Authors : Dan Iatco(s2535130) \& Levente Sandor(s255230)\\
+Group: CS 1.Ib.1 \\
+Date:  25 november 2013\\
+Day, Time of the Lab session: Thursday 14 November 2013, 15:00-17:00 \\
+Autonomous Systems lab 1 "Braitenberg Vehicles"\\
+
+\section*{Exercise 2}
+  The aggression vehicle at one point will start to make circles, inside the circle will be more light sources than outside it, the more light sources are inside the circle, the less the radius of the circle will be.
+\section*{Exercise 3}
+  When there is default speed in the aggression vehicles with light inside, they would simply go in different directions after they collide. When there is no default speed, the vehicles will move in spirals lowering the speed after intersection and increasing it before it.
+\section*{Exercise 4}
+  The lame aggression vehicle with no default speed will still reach the light source and will finish doing circles around it, with one wheel in the middle of the light source. If we unlink a wheel and add 0.2 default speed on the same wheel, it will reach the light source slower, but it ends up moving the same way.
+\section*{Exercise 5}
+  \par
+    The Braitenberg vehicles can demonstrate the frame-of-reference problem very well. I will
+    illustrate it with a simple scenario involving 3 robots - 2 Love and an Aggression - each with a light
+    source on them. Both Love vehicles are placed on the ground, facing two opposite walls, and the Aggression
+    vehicle is placed a little further. The Love vehicles will slowly turn and approach each other and get
+    stuck. Now the Aggression vehicle rushes in 'freeing' them. Why this might seem like complex behavior
+    - which it is not - is explained below.
+
+  1. Perspective issue
+  \par
+    First of all, while the two Love vehicles appear to be 'searching' for each other, they actually have
+    no concept of each other - they only follow the source of light. So even though it seems like they are
+    grouping up from our perspective, we cannot use this to explain their behavior.
+
+  2. Behavior-versus-mechanism issue
+  \par
+    Their behavior actually comes from very simple rules. Their only interaction with the world is reacting
+    to sources of light - there is no thinking involved.
+
+  3. Complexity issue
+  \par
+    The complexity of the vehicles' behavior actually comes from the environment. The more complex the
+    environment, the more complex their behavior. These vehicles do not think for themselves - they only
+    react to their environments.
+\end{document}

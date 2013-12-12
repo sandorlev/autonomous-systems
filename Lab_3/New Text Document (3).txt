@@ -1,15 +1,30 @@
-1.From the graph 1 we can easyly observe that eaters evolve each year,
+1a.From the graph 1 we can easyly observe that eaters evolve each year,
 but still the numbers are chaotic, the thing one can notice is that there are
 high developed eaters that can eat more than 30 plants.
 From the second graph we can observer how fast the eaters are evolving
 and the graph is not stable either, which means that there is the chance that
 the next generation will be more "stupid" than the previous.
+
+1b. To determine to which value the average amount of plants eaten converge we 
+let the simulation run 5 times towards the year 400 with the default settings. 
+The results were:
+Run	100 year average
+1	28,88
+2	23,54
+3	25,07
+4	28,31
+5	24,25
+
+We can conclude from this data that the average amounts of plants eaten converges
+to 26,01 +- 2,17 where 26,01 is the average and 2,17 is the standard deviation.
+
 2.At first, almost all eaters are stuck and almost not move the entire year.
 After an 100 years one can already observe more logical movement which leads to
 more plants being eaten. For example, if the grass grows on the botom or on the
 ages, the eaters will move along the edges. If it grows in clumps, their movement
 will remind a spiral. It seems that for the eaters it is harder to adapt when the
 plants grow randomly.
+
 3. With 1% of mutation probabolity we get good genetic evolution simulation, but
 there is a better progress with .25% and the bigger is the prbability of mutation
 the slower and worse is the evolution.

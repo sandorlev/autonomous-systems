@@ -85,4 +85,7 @@ Run 100 year average
 4   15.279
 5   17.904
 av: 16.9454
->>>>>>> 08c51a3814fc9ead6db43257dcf5c72a1e42a870
+
+Crossover probability plays an important role in evolution, from the simulations we notice a difference between
+between evolutions. The lower is the crossover probability, the worse an eater is evolving. This we can see on
+the second graph, which represents the average plants eaten by an eater in 5 one hudred years average.

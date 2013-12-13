@@ -71,18 +71,18 @@ Run 100 year average
 av: 24.376
 crossover probability at 50%
 Run 100 year average
-1   27.068
-2   27.312
-3   24.644
-4   24.108
-5   14.209
-av: 23.4682
+1   20.068
+2   21.312
+3   23.644
+4   18.209
+5   25.108
+av: 21.6682
 crossover probability at 0%
 Run 100 year average
-1   24.573
-2   27.74
+1   14.573
+2   17.74
 3   19.231
-4   17.279
-5   27.904
-av: 23.3454
+4   15.279
+5   17.904
+av: 16.9454
 >>>>>>> 08c51a3814fc9ead6db43257dcf5c72a1e42a870

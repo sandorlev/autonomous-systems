@@ -28,3 +28,12 @@ plants grow randomly.
 3. With 1% of mutation probabolity we get good genetic evolution simulation, but
 there is a better progress with .25% and the bigger is the prbability of mutation
 the slower and worse is the evolution.
+4.
+crossover probability at 100%
+Run 100 year average
+1   28.059
+2   23.549
+3   28.889
+4   23.362
+5   18.021
+av: 24.376

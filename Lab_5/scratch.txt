@@ -30,4 +30,17 @@ the corner, and also due to the same orientation as the robot, particles doesn't
 know what is in their back.
 I concluded that the particles are amoving the same speed and the same way as 
 the robot, but on a different maxima. They find a solution, but unfortunately it 
-is wrong. The probability of getting a right solution is 25%
+is wrong. The probability of getting a right solution is 25%.
+2B.
+The effect of setting the niching to sharing, is not desirable in our case. The 
+niching method is good if in the world are more then one robot, so multiple 
+solution is presented. With niching set to sharing, the particles are leaving 
+the niche as the carrying capacity of it is exceded.
+2C.
+After some experiments we've noticed that the number of particles needed to find 
+all 4 maximas is somewher between 700 and 800. Going deeper it showed us that the
+precise number is 760. And this is 190 particles per robot.
+2D.
+Again even in the complex world, the particles are trying to find another robots, 
+and because they do not exist in that world, the information about the location 
+of the robot sometimes is wrong.

@@ -1,0 +1,12 @@
+1A.
+After some experiments I can easyly say that raising the translation noise and 
+the rotational noise will lead to loss of accuracy for the algorithm.
+It can be noticed that amplyfying the translation noise, the particles are
+distributed to the front and back of the robot. Looks like the particles are 
+trying to predict the next possition of the robot.
+The rotational noise is keeping the particles in a particular radius, also 
+raising it, will cause the particles to spread out.
+With a translation noise of 5px and rotational set to 0.5 rad, the location
+of the robot is already unprecise, but still approximate. However at 10px of 
+translation noise and 1rad of rotational, it is imposible to find the location 
+of the robot.

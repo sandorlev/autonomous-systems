@@ -10,3 +10,24 @@ With a translation noise of 5px and rotational set to 0.5 rad, the location
 of the robot is already unprecise, but still approximate. However at 10px of 
 translation noise and 1rad of rotational, it is imposible to find the location 
 of the robot.
+1B.
+Seting the rotational and translation noise to zero, will lead to complete
+uncertainty of the location of the robot. The particles are centered in one 
+point, changing the position over time and the robot never coincide with that 
+point.
+1C.
+Seting the random distribution to 0.2 increases the accuracy of the algorithm. 
+Whenever the robot apporaches a random distributed particle, the particles' 
+probability is encreased, so there is a higher chance for other particles to 
+appear near it, as for other particles that are left behind, their probability 
+is decreasing and they dissapear over time.
+Knowing that we can conclude that random distribution helps to predict future 
+possition of the robot.
+2A.
+The particles are not always matching the robot possition. Due to the ambiguous 
+world, everything is proportional. So the particles doesn't see what is after 
+the corner, and also due to the same orientation as the robot, particles doesn't 
+know what is in their back.
+I concluded that the particles are amoving the same speed and the same way as 
+the robot, but on a different maxima. They find a solution, but unfortunately it 
+is wrong. The probability of getting a right solution is 25%

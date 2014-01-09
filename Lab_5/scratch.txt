@@ -1,61 +1,75 @@
 1A.
-After some experiments I can easyly say that raising the translation noise and 
-the rotational noise will lead to loss of accuracy for the algorithm.
-It can be noticed that amplyfying the translation noise, the particles are
+After some experiments we can easily say that raising the translation noise and 
+the rotational noise will result in loss of accuracy of the algorithm.
+It can be noticed that amplifying the translation noise, the particles are
 distributed to the front and back of the robot. Looks like the particles are 
-trying to predict the next possition of the robot.
-The rotational noise is keeping the particles in a particular radius, also 
-raising it, will cause the particles to spread out.
+trying to predict the next position of the robot.
+The rotational noise is keeping the particles in a particular radius,
+raising it will cause the particles to spread out.
 With a translation noise of 5px and rotational set to 0.5 rad, the location
 of the robot is already unprecise, but still approximate. However at 10px of 
-translation noise and 1rad of rotational, it is imposible to find the location 
+translation and 1 rad of rotational noise, it is imposible to find the location 
 of the robot.
 1B.
-Seting the rotational and translation noise to zero, will lead to complete
+Setting the rotational and translation noise to zero, will lead to complete
 uncertainty of the location of the robot. The particles are centered in one 
 point, changing the position over time and the robot never coincide with that 
 point.
 1C.
-Seting the random distribution to 0.2 increases the accuracy of the algorithm. 
-Whenever the robot apporaches a random distributed particle, the particles' 
-probability is encreased, so there is a higher chance for other particles to 
+Setting the random distribution to 0.2 increases the accuracy of the algorithm. 
+Whenever the robot approaches a randomly distributed particle, the particles' 
+probability is increased, so there is a higher chance for other particles to 
 appear near it, as for other particles that are left behind, their probability 
 is decreasing and they dissapear over time.
-Knowing that we can conclude that random distribution helps to predict future 
-possition of the robot.
+Knowing that, we can conclude that random distribution helps to predict future 
+position of the robot.
 2A.
-The particles are not always matching the robot possition. Due to the ambiguous 
-world, everything is proportional. So the particles doesn't see what is after 
-the corner, and also due to the same orientation as the robot, particles doesn't 
-know what is in their back.
-I concluded that the particles are amoving the same speed and the same way as 
+The particles are not always matching the robot's position. Due to the ambiguous 
+world, everything is proportional. So the particles don't see what is after 
+the corner, and also due to the same orientation as the robot, particles don't 
+know what is behind them.
+We concluded that the particles are moving at the same speed and the same way as 
 the robot, but on a different maxima. They find a solution, but unfortunately it 
 is wrong. The probability of getting a right solution is 25%.
 2B.
-The effect of setting the niching to sharing, is not desirable in our case. The 
-niching method is good if in the world are more then one robot, so multiple 
-solution is presented. With niching set to sharing, the particles are leaving 
-the niche as the carrying capacity of it is exceded.
+The effect of setting the niching to sharing is not desirable in our case. The 
+niching method is useful if there are more than one robots in the world, so multiple 
+solutions are presented. With niching set to sharing, the particles are leaving 
+the niche as the carrying capacity of it is exceeded.
 2C.
 After some experiments we've noticed that the number of particles needed to find 
-all 4 maximas is somewher between 700 and 800. Going deeper it showed us that the
-precise number is 760. And this is 190 particles per robot.
+all 4 maximas is somewhere between 700 and 800. Going deeper it showed us that the
+precise number is 760, which is 190 particles per robot.
 2D.
-Again even in the complex world, the particles are trying to find another robots, 
-and because they do not exist in that world, the information about the location 
-of the robot sometimes is wrong.
+Again, even in the complex world, the particles are trying to find other robots, 
+and because they do not exist in that world, sometimes the information about the
+location of the robot is wrong.
 3A.
-Whenever the robot is kidnaped, its' location is lost. Because the complex world 
+Whenever the robot is kidnapped, its location is lost. Because the complex world 
 is still composed of similar objects, the particles don't localize the robot right 
 after kidnapping, since the particles compare the environment around them and the 
-one around the robot, they can make wrong assunption of its' position in the world.
+one around the robot, they can make wrong assunption of its position in the world.
+We noticed that often, the cloud of particles mirrors the movements of the robot,
+but if given enough time, they will find it.
 3B.
-To solve the kidnaping problem it is good to place some random distributed particles 
-over the world. Lets say setting P(rand dist) to 0.1 is already enough for particles 
-to find the robot after kidnapping. Particles have the probability to reproduce, 
+To solve the kidnapping problem, we can place some randomly distributed particles 
+over the world. Setting P(rand dist) to 0.1 is already enough for particles 
+to quickly find the robot after kidnapping. Particles have the probability to reproduce, 
 as it was mentioned before, whenever the robot is kidnapped it will appear in a 
-place where already are some particles around. Comparing the environment around 
+place with some particles already around. Comparing the environment around 
 the robot and that particles, it will be simmilar, so their fittnes will raise, 
-there fore more particles will apear nearby and will converge to a right solution.
-
-
+therefore more particles will apear nearby and will converge to a right solution.
+4.
+The particle filter used by MCL is basically a genetic algorithm in itself. Like we
+saw in practical 3, there are a given amount of entities that produce offspring
+based on their fitness, while also introducing random changes and mutations based on
+different parameters. In practical 3, they were called eaters, and their fitness was
+determined by the number of plants eaten, but here, they are called particles and
+their 'fitness' is determined by how probable it is that they are close to the robot.
+Each generation produces offspring that are more fit to their environment, in this
+case, closer to the robot. Mutations take the form of noise, and just like how a small
+chance of mutation benefited the eaters' average fitness profoundly, some noise can
+bring much desired effects, like solving the kidnapping problem. Since the particles'
+fitness is decided by their (probable) proximity to the robot, and those with low
+fitness are erased, it is easy to see why after a few generations will the particles
+cloud around the robot.

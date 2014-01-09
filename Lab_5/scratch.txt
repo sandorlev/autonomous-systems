@@ -44,3 +44,18 @@ precise number is 760. And this is 190 particles per robot.
 Again even in the complex world, the particles are trying to find another robots, 
 and because they do not exist in that world, the information about the location 
 of the robot sometimes is wrong.
+3A.
+Whenever the robot is kidnaped, its' location is lost. Because the complex world 
+is still composed of similar objects, the particles don't localize the robot right 
+after kidnapping, since the particles compare the environment around them and the 
+one around the robot, they can make wrong assunption of its' position in the world.
+3B.
+To solve the kidnaping problem it is good to place some random distributed particles 
+over the world. Lets say setting P(rand dist) to 0.1 is already enough for particles 
+to find the robot after kidnapping. Particles have the probability to reproduce, 
+as it was mentioned before, whenever the robot is kidnapped it will appear in a 
+place where already are some particles around. Comparing the environment around 
+the robot and that particles, it will be simmilar, so their fittnes will raise, 
+there fore more particles will apear nearby and will converge to a right solution.
+
+
